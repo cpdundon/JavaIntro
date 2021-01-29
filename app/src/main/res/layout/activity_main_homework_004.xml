@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ Copyright (C) 2019 The Android Open Source Project
+~
+~ Licensed under the Apache License, Version 2.0 (the "License");
+~ you may not use this file except in compliance with the License.
+~ You may obtain a copy of the License at
+~
+~      http://www.apache.org/licenses/LICENSE-2.0
+~
+~ Unless required by applicable law or agreed to in writing, software
+~ distributed under the License is distributed on an "AS IS" BASIS,
+~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~ See the License for the specific language governing permissions and
+~ limitations under the License.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/random.small"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="@id/n_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/m_2"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="@id/n_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/m_2"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal|bottom"
+        android:text="Bona Italian"
+        android:textAppearance="?textAppearanceHeadline5"
+        app:layout_constraintBottom_toBottomOf="@id/m_1"
+        app:layout_constraintEnd_toEndOf="@id/n_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/n_4"
+        app:layout_constraintTop_toTopOf="@id/m_1"
+        app:layout_constraintBottom_toBottomOf="@id/m_2"
+        android:text="Tasty Spicy"
+        android:gravity="center_horizontal|top"
+        android:textAppearance="?textAppearanceHeadline6"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        app:srcCompat="@color/white_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/m_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/random"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/n_1"
+        app:layout_constraintTop_toTopOf="@id/m_2"
+        app:layout_constraintBottom_toBottomOf="@id/m_3"
+        app:icon="@drawable/ic_search_control_normal_24dp"
+        android:backgroundTint="@color/teal_200"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/n_1"
+        app:layout_constraintEnd_toEndOf="@id/n_3"
+        app:layout_constraintTop_toTopOf="@id/m_2"
+        app:layout_constraintBottom_toBottomOf="@id/m_3"
+        android:text="Search"
+        android:gravity="center_vertical|left"
+        android:textAppearance="?textAppearanceHeadline6"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/n_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/m_2"
+        app:layout_constraintBottom_toBottomOf="@id/m_3"
+        app:icon="@drawable/ic_share_control_normal_24dp"
+        android:backgroundTint="@color/teal_200"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/n_1"
+        app:layout_constraintTop_toTopOf="@id/m_3"
+        app:layout_constraintBottom_toBottomOf="@id/m_4"
+        android:background="@color/red_200"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/n_1"
+        app:layout_constraintTop_toTopOf="@id/m_3"
+        app:layout_constraintBottom_toBottomOf="@id/m_4"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/n_1"
+        app:layout_constraintEnd_toEndOf="@id/n_5"
+        app:layout_constraintTop_toTopOf="@id/m_3"
+        app:layout_constraintBottom_toBottomOf="@id/m_4"
+        android:text="Android Bacon"
+        android:gravity="top|left"
+        android:textAppearance="?textAppearanceHeadline5"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/n_1"
+        app:layout_constraintEnd_toEndOf="@id/n_5"
+        app:layout_constraintTop_toTopOf="@id/m_3"
+        app:layout_constraintBottom_toBottomOf="@id/m_4"
+        android:text="Tasty breakfast food with vitamin D."
+        android:gravity="bottom|left"
+        android:textAppearance="?textAppearanceHeadline6"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/m_3"
+        app:layout_constraintBottom_toBottomOf="@id/m_35"
+        app:layout_constraintStart_toStartOf="@id/n_75"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="1dp"
+        android:text="+"
+        android:textColor="@color/red_600"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/n_6"
+        app:layout_constraintEnd_toEndOf="@id/n_75"
+        app:layout_constraintTop_toTopOf="@id/m_35"
+        app:layout_constraintBottom_toBottomOf="@id/m_4"
+        android:text="20.00"
+        android:gravity="bottom|right"
+        android:textAppearance="?textAppearanceHeadline6"
+        android:textColor="@color/red_600"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/n_75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/m_35"
+        app:layout_constraintBottom_toBottomOf="@id/m_4"
+        android:text="USD"
+        android:gravity="bottom|left"
+        android:textAppearance="?textAppearanceHeadline6"
+        android:textColor="@color/red_600"
+        android:textSize="12sp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/m_5"
+        app:layout_constraintBottom_toBottomOf="@id/m_6"
+        app:layout_constraintStart_toStartOf="@id/n_2"
+        app:layout_constraintEnd_toEndOf="@id/n_6"
+        android:text="Check List"
+        app:cornerRadius="20dp"
+        />
+
+    <!-- Begin Grid -->
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_1"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".125"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_2"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".25"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_3"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".375"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_4"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_5"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".625"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_6"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".75"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_7"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".875"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_1"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".125"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_2"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".25"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_3"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".375"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_4"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_5"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".625"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_6"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".75"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_7"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".875"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_35"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".4375"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/n_75"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".9375"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
