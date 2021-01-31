@@ -17,6 +17,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_top_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -31,12 +32,13 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="bottom|right"
-        android:text="@string/_1000"
+        android:text = ""
         android:textColor="?colorOnBackground"
         android:textFontWeight="700"
         android:textSize="55sp" />
 
     <LinearLayout
+        android:id="@+id/ll_row_0"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -46,7 +48,7 @@
         android:weightSum="4">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_c"
+            android:id="@+id/btn_clr"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -70,7 +72,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_div"
+            android:id="@+id/btn_opr_div"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -80,6 +82,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_row_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -89,7 +92,7 @@
         android:weightSum="4">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_1"
+            android:id="@+id/btn_num_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -97,7 +100,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_2"
+            android:id="@+id/btn_num_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -105,7 +108,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_3"
+            android:id="@+id/btn_num_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -113,7 +116,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_x"
+            android:id="@+id/btn_opr_x"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -123,6 +126,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_row_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -132,7 +136,7 @@
         android:weightSum="4">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_4"
+            android:id="@+id/btn_num_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -140,7 +144,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_5"
+            android:id="@+id/btn_num_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -148,7 +152,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_6"
+            android:id="@+id/btn_num_6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -156,7 +160,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_minus"
+            android:id="@+id/btn_opr_minus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -166,6 +170,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_row_3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -175,7 +180,7 @@
         android:weightSum="4">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_7"
+            android:id="@+id/btn_num_7"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -183,7 +188,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_8"
+            android:id="@+id/btn_num_8"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -191,7 +196,7 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_9"
+            android:id="@+id/btn_num_9"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -199,16 +204,16 @@
             android:textSize="20sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_plus"
+            android:id="@+id/btn_opr_plus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+"
             android:textSize="20sp" />
-
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_row_4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -218,7 +223,7 @@
         android:weightSum="4">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_0"
+            android:id="@+id/btn_num_0"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -248,7 +253,6 @@
             android:layout_weight="1"
             android:text="="
             android:textSize="20sp" />
-
     </LinearLayout>
 
 </LinearLayout>
