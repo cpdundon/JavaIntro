@@ -36,8 +36,8 @@
     <!--Shape Appearance for small components like chips, buttons, text fields and FABs-->
     <style name="ShapeAppearance.MyTheme.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <!--Your custom shape here-->
-        <item name="android:textColor">@color/blue_500</item>
-        <item name="background">@color/blue_500</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
     </style>
 
     <!--Shape Appearance for medium components like cards, alert dialogs-->

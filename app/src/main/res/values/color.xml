@@ -66,5 +66,6 @@
     <!--Color on secondary (light), color on background (light),-->
     <!--color on surface (light)-->
     <color name="black_900">#000000</color>
-
+    <color name="gray_200">#9aa297</color>
+    <color name="gray_700">#36454f</color>
 </resources>

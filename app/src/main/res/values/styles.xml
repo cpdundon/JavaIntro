@@ -18,14 +18,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!--Components-->
-    <style name="random.small">
-        <item name="srcCompat">@color/red_200</item>
+   <style name="btn_number">
+        <item name="backgroundTint">@color/blue_500</item>
     </style>
-    <style name="random">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyTheme.Image</item>
+    <style name="btn_operator">
+        <item name="backgroundTint">?colorSecondary</item>
     </style>
+    <style name="btn_equals">
+        <item name="backgroundTint">?colorSecondaryVariant</item>
+    </style>
+    <style name="btn_other">
+        <item name="backgroundTint">?colorPrimary</item>
+    </style>
+
     <!--Bottom Sheets-->
     <style name="ThemeOverlay.MyTheme.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.Dialog">
         <item name="android:windowIsFloating">false</item>
