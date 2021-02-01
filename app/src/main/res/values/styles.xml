@@ -19,9 +19,9 @@
 
     <!--Components-->
     <style name="CalculatorButton">
+        <item name="android:layout_margin">2dp</item>
         <item name="strokeColor">?colorOnBackground</item>
         <item name="strokeWidth">1dp</item>
-        <item name="android:layout_margin">2dp</item>
     </style>
     <style name="btn_number" parent="CalculatorButton">
         <item name="backgroundTint">?colorPrimaryVariant</item>
