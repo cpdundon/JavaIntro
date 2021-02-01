@@ -18,16 +18,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!--Components-->
-   <style name="btn_number">
-        <item name="backgroundTint">@color/blue_500</item>
+    <style name="CalculatorButton">
+        <item name="strokeColor">?colorOnBackground</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:layout_margin">2dp</item>
     </style>
-    <style name="btn_operator">
+    <style name="btn_number" parent="CalculatorButton">
+        <item name="backgroundTint">?colorPrimaryVariant</item>
+    </style>
+    <style name="btn_operator" parent="CalculatorButton">
         <item name="backgroundTint">?colorSecondary</item>
     </style>
-    <style name="btn_equals">
+    <style name="btn_equals" parent="CalculatorButton">
         <item name="backgroundTint">?colorSecondaryVariant</item>
     </style>
-    <style name="btn_other">
+    <style name="btn_other" parent="CalculatorButton">
         <item name="backgroundTint">?colorPrimary</item>
     </style>
 

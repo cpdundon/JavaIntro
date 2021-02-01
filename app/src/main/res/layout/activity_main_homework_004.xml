@@ -112,7 +112,7 @@
         android:backgroundTint="@color/teal_200"
         />
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <!--<com.google.android.material.imageview.ShapeableImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:srcCompat="@drawable/ic_launcher_background"
@@ -121,7 +121,7 @@
         app:layout_constraintTop_toTopOf="@id/m_3"
         app:layout_constraintBottom_toBottomOf="@id/m_4"
         android:background="@color/red_200"
-        />
+        />-->
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="0dp"

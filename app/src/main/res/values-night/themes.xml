@@ -20,7 +20,7 @@
     <style name="Theme.MyApp" parent="Base.Theme.MyApp">
         <!--Material color attributes (dark theme) -->
         <item name="colorPrimary">@color/red_200</item>
-        <item name="colorPrimaryVariant">@color/purple_600</item>
+        <item name="colorPrimaryVariant">@color/blue_200</item>
         <item name="colorSecondary">@color/gray_200</item>
         <item name="colorSecondaryVariant">@color/green_200</item>
         <item name="android:colorBackground">@color/black_900</item>

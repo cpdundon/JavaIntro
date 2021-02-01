@@ -256,7 +256,7 @@
             android:layout_weight="1"
             android:text="."
             android:textSize="20sp"
-            style="@style/btn_other"/>
+            style="@style/btn_number"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_del"

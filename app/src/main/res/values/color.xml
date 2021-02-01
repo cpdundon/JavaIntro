@@ -47,7 +47,8 @@
     <color name="purple_600">#4b01d0</color> <!--Color primary variant (dark)-->
     <color name="purple_700">#3700b3</color> <!--Color primary variant (light)-->
 
-    <color name="blue_500">#608ca8</color>
+    <color name="blue_200">#608ca8</color>
+    <color name="blue_600">#003399</color>
 
     <color name="green_200">#03dac6</color> <!--Color secondary-->
     <color name="green_500">#018786</color> <!--Color secondary variant-->
