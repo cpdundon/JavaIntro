@@ -31,11 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:gravity="bottom|right"
-        android:text = ""
-        android:textColor="?colorOnBackground"
-        android:textFontWeight="700"
-        android:textSize="55sp" />
+        android:gravity="bottom|end"
+        android:textAppearance="?textAppearanceHeadline6" />
 
     <LinearLayout
         android:id="@+id/ll_row_0"

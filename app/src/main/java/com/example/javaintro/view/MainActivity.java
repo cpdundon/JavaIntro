@@ -1,11 +1,20 @@
-package com.example.javaintro;
+package com.example.javaintro.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.example.javaintro.R;
+import com.example.javaintro.viewmodel.MainViewModel;
+import com.example.javaintro.viewmodel.Operator;
+import com.example.javaintro.viewmodel.OperatorDivide;
+import com.example.javaintro.viewmodel.OperatorMinus;
+import com.example.javaintro.viewmodel.OperatorMultiply;
+import com.example.javaintro.viewmodel.OperatorPlus;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -14,20 +23,22 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     private MaterialTextView tvDisplay;
-    private double priorValue = 0.0;
-    private String operator = "";
     private boolean fresh = false;
-    private String[] operatorIds = new String[] {Integer.toString(R.id.btn_opr_div), Integer.toString (R.id.btn_opr_x),
+    private final String[] operatorIds = new String[] {Integer.toString(R.id.btn_opr_div), Integer.toString (R.id.btn_opr_x),
             Integer.toString(R.id.btn_opr_minus), Integer.toString(R.id.btn_opr_plus)};
+
+    // Declare viewmodel
+    private MainViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+
         setContentView(R.layout.activity_main_calculator);
         LinearLayout llTop = findViewById(R.id.ll_top_parent);
 
         tvDisplay = findViewById(R.id.tv_display);
-        tvDisplay.setText("0");
 
         for(int i = 0; i < llTop.getChildCount(); i++)
         {
@@ -36,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
                 processButtons((LinearLayout) llTop.getChildAt(i));
             }
         }
+
+        // Observe data
+        viewModel.getDisplay().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String display) {
+                if (display.equals("0.0")) {
+                    display = "0";
+                }
+
+                tvDisplay.setText(display);
+            }
+        });
+
+        // Initialize the display
+        viewModel.execute("0");
     }
 
     private void processButtons(LinearLayout ll) {
@@ -49,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     mB.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            tvDisplay.setText("0");
+                            viewModel.setOperator(new OperatorMultiply(), 0.0);
                         }
                     });
 
@@ -71,16 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     mB.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            String strCurrDisp = tvDisplay.getText().toString();
-                            if (strCurrDisp.length() <= 1) {
-                                tvDisplay.setText("0");
-                            } else if (((Integer)strCurrDisp.length()).equals(2) &&
-                                strCurrDisp.substring(0, 1).equals("-")) {
-                                tvDisplay.setText("0");
-                            }
-                            else {
-                                tvDisplay.setText(strCurrDisp.substring(0,strCurrDisp.length()-1));
-                            }
+                            deleteChar();
                         }
                     });
 
@@ -101,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
                     mB.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            double currentValue = Double.parseDouble((String) tvDisplay.getText());
-                            tvDisplay.setText(String.valueOf(currentValue * 100));
+                            Double currentValue = Double.parseDouble(displayText());
+                            tvDisplay.setText(viewModel.pctCalc(currentValue));
                         }
 
                     });
@@ -131,8 +148,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void deleteChar() {
+        String strCurrDisp = displayText();
+        if (strCurrDisp.length() <= 1) {
+            tvDisplay.setText("0");
+        } else if (((Integer)strCurrDisp.length()).equals(2) &&
+            strCurrDisp.substring(0, 1).equals("-")) {
+            tvDisplay.setText("0");
+        }
+        else {
+            tvDisplay.setText(strCurrDisp.substring(0,strCurrDisp.length()-1));
+        }
+        fresh = false;
+    }
+
     private void updateView(MaterialButton btn) {
-        String root= (String) tvDisplay.getText();
+        String root = displayText();
 
         if (root.equals("0") || fresh) {
             root = "";
@@ -148,48 +179,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void processOperator(MaterialButton btn) {
-        priorValue = Double.parseDouble((String) tvDisplay.getText());
-        operator = (String) btn.getText();
-        tvDisplay.setText("0");
+        Double priorValue = Double.parseDouble(displayText());
+        String operatorStr = (String) btn.getText();
+        Operator oper = new OperatorPlus();
+        switch (operatorStr) {
+            case "-":
+                oper = new OperatorMinus();
+                break;
+            case "*":
+                oper = new OperatorMultiply();
+                break;
+            case "/":
+                oper = new OperatorDivide();
+                break;
+        }
+        viewModel.setOperator(oper, priorValue);
     }
 
     private void execute(MaterialButton btn) {
-        double currentValue = Double.parseDouble((String) tvDisplay.getText());
-        String output;
-        if (operator.equals("+")) {
-            output = String.valueOf(currentValue + priorValue);
-        } else if (operator.equals("-")) {
-            output = String.valueOf(priorValue - currentValue);
-        } else if (operator.equals("*")) {
-            output = String.valueOf(priorValue * currentValue);
-        } else if (operator.equals("/")) {
-            if (currentValue == 0.0) {
-                output = "0";
-            } else {
-                output = String.valueOf(priorValue / currentValue);
-            }
-        } else {
-            output = "0";
-        }
-        tvDisplay.setText(output);
+        viewModel.execute(displayText());
         fresh = true;
     }
 
     private void changeSign(MaterialButton btn) {
-        String oldValue = (String) tvDisplay.getText();
-        if (oldValue.equals("0")) {
-            return;
-        }
+        String oldValue = displayText();
+        viewModel.changeSign(oldValue);
+    }
 
-        boolean isPositive = !oldValue.substring(0,1).equals("-");
-        String sT;
-
-        if (isPositive) {
-            sT = "-" + oldValue;
-        } else {
-            sT = oldValue.substring(1, oldValue.length());
-        }
-
-        tvDisplay.setText(sT);
+    private String displayText() {
+        return (String) tvDisplay.getText();
     }
 }
